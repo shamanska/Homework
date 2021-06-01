@@ -1,0 +1,41 @@
+# 1. знайти середнє арифметичне значення цикла
+lst = [1, 2, 3, 4, 5]
+i = 0
+s = 0
+k = 0
+while i < len(lst):
+    s = s + lst[i]
+    k = i + 1
+    i += 1
+print(s / k)
+# 2. знайти мінімімум в списку
+m = lst[0]
+while i < len(lst):
+    if lst[i] < m:
+        m = lst[i]
+    i += 1
+print('min = ', m)
+# 3. Вивести в консоль всі числа зі списку що діляться на 5
+lst = [1, 2, 3, 4, 5]
+while i < len(lst):
+    if lst[i] % 5 == 0:
+        i += 1
+print(i)
+# 4. Створити список слів, в консоль вивести слово яке має найбільшу кількість букв
+lst_1 = ['apple', 'pineapple', 'cherry', 'strawberry']
+i = 0
+n = lst_1[0]
+while i < len(lst_1):
+    if len(lst_1[i]) > len(n):
+        n = lst_1[i]
+    i += 1
+print(n)
+# 5. Програма просить вас вводить слова з клавіатури,
+# якщо ви вводите stop, то ми виводим у консоль всі слова що були введені під час циклу.
+i = ''
+v1 = 'stop'
+while i != v1:
+    i = (input('print a word:'))
+    print(i)
+    if i == v1:
+        break
