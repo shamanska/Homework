@@ -1,0 +1,85 @@
+## 1 Приймає радіус кола і обраховує його площу. s=pi*r^2
+import math
+def round_func(r):
+    result = math.pi * (r ** 2)
+    return result
+t = round_func(6)
+print(t)
+### 2. Приймає два аргументи ім'я і прізвища і повертає фразу "Hello {name} {surname}
+def name_func(a, b):
+    result = ('Hello', a, b)
+    return result
+m = name_func('Kate', 'Shamanska')
+print(m)
+### 3. Розв'язує квадратне рівняння по переданим аргументам a, b, c.
+def equat_func (a, b, c):
+    a = float(a)
+    b = float(b)
+    c = float(c)
+    discriminant = b ** 2 - 4 * a * c
+    print('Дискриминант = ' + str(discriminant))
+    if discriminant < 0:
+        print('Корней нет')
+    elif discriminant == 0:
+        x = -b / (2 * a)
+        print('x = ' + str(x))
+    else:
+        x1 = (-b + discriminant ** 0.5) / (2 * a)
+        x2 = (-b - discriminant ** 0.5) / (2 * a)
+        print('x₁ = ' + str(x1))
+        print('x₂ = ' + str(x2))
+    return discriminant
+t1 = equat_func(1, 34, 18)
+print(t1)
+###### 4. Приймає список і повертає максимум в ньому. (аналог функції max)
+lst = [1, 2, 3, 4, 5]
+def max_numb(lst):
+    j = lst[0]
+    for i in lst:
+        if i > j:
+            j = i
+    return j
+t1 = max_numb([1, 8, 3, 4, 5])
+print(t1)
+#### 5. Що повертає True якщо строка є поліндромом і False в іншому випадку.
+def palindrome(string):
+    if len(string) <= 1:
+        return True
+    else:
+        n = len(string)
+        for i in range(n//2):
+            if string[i] != string[n-1-i]:
+                return False
+        return True
+r = palindrome('искатьтакси')
+print(r)
+##### 6. Обраховує факторіал числа n
+def factorial(n):
+    if n != 0:
+        return n * factorial(n-1)
+    else:
+        return 1
+k = factorial(6)
+print(k)
+##### 7. Написати функцію що переводить число n в двоичну систему числення
+def bin_func(x):
+    if x == 0:
+        return '0'
+    r = ''
+    while x > 0:
+        r = ('0'
+               if x % 2 == 0
+               else '1') + r
+        x //= 2
+    return r
+g = bin_func(5)
+print(g)
+#### 8. Написати функцію що переводить двоічне число в звичайну систему числення
+def bin_dec(data):
+    number = 0
+    len_dat = len(data)
+    for i in range(0, len_dat):
+        number += int(data[i]) * (2**(len_dat - i -1))
+    return number
+b = bin_dec(10101)
+print(b)
