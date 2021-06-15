@@ -1,0 +1,30 @@
+##1. Обєднати два списка ["age", "weight", "name"] і [60, 100, 'Ivan'] і перетворити це
+# об'єднання в словник
+a = ["age", "weight", "name"]
+b = [60, 100, 'Ivan']
+print(dict(zip(a, b)))
+###2. Написати функцію lambda що приймає x i y, а повертає x^2 + y^2
+add = lambda x, y: x**2 + y**2
+print(add(3, 4))
+## 3. Написати функцію lambda що приймає слово і повертає його довжину.
+a = 'hello'
+word = lambda a: len(a)
+print(word(a))
+### 4. Написати map що перетворює всі числа в списку на строку.
+d = [23, 56, 3, 4, 7, 8, 10]
+def strn(d):
+    return str(d)
+s = map(strn, d)
+print(list(s))
+### 5. Написати filter що залишає в списку тільки числа > 10
+def more_10(n):
+    if n > 10:
+        return True
+    else:
+        return False
+
+
+a = [1, 4, 7, 32, 67, 89, 23]
+k = filter(more_10, a)
+
+print(list(k))
