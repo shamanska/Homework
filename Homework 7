@@ -27,8 +27,8 @@ def max_f(n):
     for i in n:
         try:
             i = int(i)
-        except TypeError:
-            pass
+        except ValueError:
+            n.remove(i)
     result = max(n)
     return result
 print(max_f(n))
