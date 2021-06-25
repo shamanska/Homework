@@ -1,0 +1,49 @@
+
+
+class Hero:
+
+    def __init__(self, rank, health, power):
+        self.__rank = rank
+        self.health = health
+        self.power = power
+
+    def fight(self, other_hero):
+        other_hero.health = other_hero.health - self.power
+        if self.health < 0:
+            self.health = 0
+        if self.health > 100:
+            self.health = 100
+        if self.power < 0:
+            self.power = 0
+        if self.power > 100:
+            self.power = 100
+
+    def heal(self, other_hero):
+        if self.health < 50:
+            self.health = self.health + 2
+        if other_hero.health < 50:
+            other_hero.health = other_hero.health + 5
+
+    def get_rank(self):
+        return self.__rank
+
+    def set_rank(self, value):
+        self.__rank = value
+        if value > 3:
+            self.__rank = 3
+        if value < 1:
+            self.__rank = 1
+
+    rank = property(get_rank, set_rank)
+
+
+hero_1 = Hero(rank=1, health=78, power=10)
+hero_2 = Hero(rank=3, health=56, power=13)
+
+hero_1.fight(hero_2)
+hero_2.heal(hero_2)
+hero_2.fight(hero_1)
+hero_1.heal(hero_1)
+
+print(hero_2.health)
+print(hero_1.health)
